@@ -1,4 +1,4 @@
-web: gunicorn teoricodjango.wsgi --log-file -
+web: gunicorn convite.wsgi --log-file -
 
 
 
