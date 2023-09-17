@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #pergunta {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #botoes {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        #mensagem {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pergunta">
+        A senhorita está afim de sair para tomar um açaí? Chama Suellen tb!
+    </div>
+    <div id="botoes">
+        <button id="sim" onclick="mostrarMensagem(true)">Sim</button>
+        <button id="nao" onclick="moverBotaoNao()">Não</button>
+    </div>
+    <div id="mensagem">
+        Uhulll! Depois me fale um melhor horário e eu vou encontrar vcs! ;*
+    </div>
+
+    <script>
+        function mostrarMensagem(resposta) {
+            const mensagem = document.getElementById("mensagem");
+            const botoes = document.getElementById("botoes");
+
+            if (resposta) {
+                mensagem.style.display = "block";
+                botoes.style.display = "none";
+            }
+        }
+
+        function moverBotaoNao() {
+            const botaoNao = document.getElementById("nao");
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+
+            botaoNao.style.position = "absolute";
+            botaoNao.style.left = x + "px";
+            botaoNao.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
